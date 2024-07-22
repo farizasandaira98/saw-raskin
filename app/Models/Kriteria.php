@@ -12,4 +12,9 @@ class Kriteria extends Model
     protected $fillable = ['nama'];
 
     protected $table = 'kriterias';
+
+    public function subKriterias()
+    {
+        return $this->hasMany(SubKriteria::class, 'kriteria_id');
+    }
 }

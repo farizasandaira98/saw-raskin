@@ -17,4 +17,11 @@ class Penduduk extends Model
     {
         return $this->belongsTo(Kriteria::class);
     }
+
+    public function subKriterias()
+{
+    return $this->hasMany(PendudukSubKriteria::class);
+}
+
+
 }

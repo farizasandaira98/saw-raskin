@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KriteriaController;
+use App\Http\Controllers\RankingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,6 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
     // Route::resource('kriterias', KriteriaController::class);
+    
 });
+Route::get('/calculate-rankings', [RankingController::class, 'calculateRankings'])->name('calculate.rankings');

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('penduduk_id');
             $table->unsignedBigInteger('sub_kriteria_id');
-            $table->float('nilai');
+            $table->double('nilai', 8, 2);
             $table->timestamps();
         });
     }

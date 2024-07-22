@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('nama');
             $table->unsignedBigInteger('kriteria_id');
             $table->timestamps();
+            $table->double('weighted_sum')->nullable();
+            $table->integer('rank')->nullable();
         });
     }
 
