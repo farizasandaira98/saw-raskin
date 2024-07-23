@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+use App\Models\SubKriteria;
+
+Route::get('/sub_kriterias', function(Request $request) {
+    $kriteriaId = $request->query('kriteria_id');
+    return SubKriteria::where('kriteria_id', $kriteriaId)->get();
 });
+

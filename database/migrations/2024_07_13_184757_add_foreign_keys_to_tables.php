@@ -16,12 +16,9 @@ return new class extends Migration
             $table->foreign('kriteria_id')->references('id')->on('kriterias')->onDelete('cascade');
         });
 
-        Schema::table('penduduks', function (Blueprint $table) {
-            $table->foreign('kriteria_id')->references('id')->on('kriterias')->onDelete('cascade');
-        });
-
         Schema::table('penduduk_sub_kriterias', function (Blueprint $table) {
             $table->foreign('penduduk_id')->references('id')->on('penduduks')->onDelete('cascade');
+            $table->foreign('kriteria_id')->references('id')->on('kriterias')->onDelete('cascade');
             $table->foreign('sub_kriteria_id')->references('id')->on('sub_kriterias')->onDelete('cascade');
         });
     }

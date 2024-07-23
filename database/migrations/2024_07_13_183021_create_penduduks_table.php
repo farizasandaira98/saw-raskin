@@ -15,7 +15,6 @@ return new class extends Migration
         Schema::create('penduduks', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->unsignedBigInteger('kriteria_id');
             $table->timestamps();
             $table->double('weighted_sum')->nullable();
             $table->integer('rank')->nullable();

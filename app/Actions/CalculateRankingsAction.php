@@ -30,6 +30,6 @@ class CalculateRankingsAction extends AbstractAction
 
     public function shouldActionDisplayOnDataType()
     {
-        return $this->dataType->slug == 'penduduk';
+        return $this->dataType->slug == 'penduduks';
     }
 }

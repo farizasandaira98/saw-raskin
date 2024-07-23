@@ -18,11 +18,16 @@ use App\Http\Controllers\RankingController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
-    // Route::resource('kriterias', KriteriaController::class);
-    
 });
 Route::get('/calculate-rankings', [RankingController::class, 'calculateRankings'])->name('calculate.rankings');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

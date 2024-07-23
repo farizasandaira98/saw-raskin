@@ -22,5 +22,6 @@ class VoyagerCustomServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Voyager::addAction(CalculateRankingsAction::class);
+        Voyager::addFormField(\App\FormFields\FilteredSelectFormField::class);
     }
 }

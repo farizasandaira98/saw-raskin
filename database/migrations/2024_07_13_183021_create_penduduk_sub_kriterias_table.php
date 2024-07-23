@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('penduduk_sub_kriterias', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('penduduk_id');
+            $table->unsignedBigInteger('kriteria_id');
             $table->unsignedBigInteger('sub_kriteria_id');
             $table->double('nilai', 8, 2);
             $table->timestamps();
