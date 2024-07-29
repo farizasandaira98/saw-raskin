@@ -30,4 +30,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/penduduk', [App\Http\Controllers\PendudukController::class, 'index'])->name('penduduk');
+    Route::get('/penilaian', [App\Http\Controllers\RankingController::class, 'index'])->name('penilaian');
+    Route::get('/sub-kriteria', [App\Http\Controllers\SubKriteriaController::class, 'index'])->name('sub-kriteria');
 });

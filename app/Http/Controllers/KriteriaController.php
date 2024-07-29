@@ -16,6 +16,15 @@ class KriteriaController extends VoyagerBaseController
         return view('voyager::kriterias.index', compact('kriterias'));
     }
 
+    
+    // API new function to return json data for index_user get all kriteria
+    public function index_user()
+    {
+        return view('kriteria', [
+            'kriterias' => Kriteria::all()
+        ]);
+    }
+
     // Override the store method
     public function store(Request $request)
     {

@@ -14,6 +14,12 @@ class SubKriteria extends Model
         return $this->hasMany(PendudukSubKriteria::class);
     }
 
+    
+    public function kriteria()
+    {
+        return $this->belongsTo(Kriteria::class, 'kriteria_id');
+    }
+
     public function pendudukSubKriterias()
     {
         return $this->hasMany(PendudukSubKriteria::class, 'sub_kriteria_id');

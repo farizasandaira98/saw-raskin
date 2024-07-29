@@ -42,6 +42,10 @@ class RankingController extends Controller
     return redirect()->back()->with('message', 'Perhitungan peringkat berhasil dilakukan');
 }
 
-
+    public function index(){
+        return view('penilaian', [
+            'penilaian' => PendudukSubKriteria::all()
+        ]);
+    }
 }
 
