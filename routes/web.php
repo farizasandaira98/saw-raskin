@@ -33,4 +33,5 @@ Route::middleware([
     Route::get('/penduduk', [App\Http\Controllers\PendudukController::class, 'index'])->name('penduduk');
     Route::get('/penilaian', [App\Http\Controllers\RankingController::class, 'index'])->name('penilaian');
     Route::get('/sub-kriteria', [App\Http\Controllers\SubKriteriaController::class, 'index'])->name('sub-kriteria');
+    Route::get('/penduduk/download', [App\Http\Controllers\PendudukController::class, 'download'])->name('penduduk.download');
 });
